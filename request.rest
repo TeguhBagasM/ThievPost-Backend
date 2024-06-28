@@ -1,0 +1,98 @@
+GET http://localhost:5000/users
+
+###
+GET http://localhost:5000/posts/1/comments
+
+###
+GET http://localhost:5000/postpub
+
+###
+GET http://localhost:5000/users/79057360-e60f-42de-bc68-f4f8c8c61437
+
+###
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+    "fullname": "bagmar",
+    "password": "admin21",
+    "confPassword": "admin21",
+    "email": "admin21@gmail.com",
+    "role": "admin"
+}
+
+###
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+    "fullname": "bagas",
+    "password": "bagas",
+    "confPassword": "bagas",
+    "email": "bagas@gmail.com",
+    "role": "lecturers"
+}
+
+###
+POST http://localhost:5000/comments
+Content-Type: application/json
+
+{
+    "content": "testing",
+    "postId": "1"
+}
+
+###
+PATCH http://localhost:5000/users/8d00e81a-da19-4177-a00a-a6b1a4b8d146
+Content-Type: application/json
+
+{
+    "fullname": "test",
+    "password": "testudin",
+    "confPassword": "testudin",
+    "email": "testudin@gmail.com",
+    "role": "students"
+}
+###
+PATCH http://localhost:5000/posts/1
+Content-Type: application/json
+
+{
+    "title": "test",
+    "description": "testudin",
+    "status": "public"
+}
+
+###
+DELETE http://localhost:5000/users/8d00e81a-da19-4177-a00a-a6b1a4b8d146
+
+###
+DELETE http://localhost:5000/posts/3
+
+
+###
+POST http://localhost:5000/login
+//login user
+Content-Type: application/json
+
+{
+    "email": "taylor@gmail.com",
+    "password": "taylor"
+}
+
+
+###
+POST http://localhost:5000/login
+//login admin
+Content-Type: application/json
+
+{
+    "email": "teguh@gmail.com",
+    "password": "teguh"
+}
+
+###
+GET http://localhost:5000/me
+
+###
+DELETE http://localhost:5000/logout
