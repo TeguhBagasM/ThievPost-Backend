@@ -5,6 +5,18 @@ import { Op } from "sequelize";
 import User from "../models/UserModel.js";
 import { v4 as uuidv4 } from "uuid";
 
+export const getTotalPostsByUser = async (req, res) => {
+  try {
+    const userId = req.params.userId;
+    const totalPosts = await Post.count({ where: { userId: userId } });
+    console.log("totalPosts:", totalPosts); // Pastikan totalPosts tercetak dengan benar di console backend
+    res.json({ totalPosts });
+  } catch (error) {
+    console.error("Error fetching total posts:", error); // Pastikan error tercetak di console backend jika ada masalah
+    res.status(500).json({ error: "Error fetching total posts" });
+  }
+};
+
 export const getPostPublic = async (req, res) => {
   try {
     const posts = await Post.findAll({

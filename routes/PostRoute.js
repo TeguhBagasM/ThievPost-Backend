@@ -8,6 +8,7 @@ import {
   updatePost,
   deletePost,
   getPostAll,
+  getTotalPostsByUser,
 } from "../controllers/PostController.js";
 import { verifyUser } from "../middleware/AuthUser.js";
 
@@ -20,5 +21,7 @@ router.get("/posts/:id", verifyUser, getPostById);
 router.post("/posts", verifyUser, createPost);
 router.patch("/posts/:id", verifyUser, updatePost);
 router.delete("/posts/:id", verifyUser, deletePost);
+
+router.get("/posts/user/:userId/count", getTotalPostsByUser);
 
 export default router;

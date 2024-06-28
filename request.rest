@@ -7,6 +7,9 @@ GET http://localhost:5000/posts/1/comments
 GET http://localhost:5000/postpub
 
 ###
+GET http://localhost:5000/posts/user/1/count
+
+###
 GET http://localhost:5000/users/79057360-e60f-42de-bc68-f4f8c8c61437
 
 ###
